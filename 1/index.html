@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head1>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transition - Easy Tutorials</title>
+</head1>
+<body>
+
+<div class="container">
+
+        <div class="img-box">
+            <img src="image/nexia-removebg-preview.png" width="100%">
+        </div>
+        <div class="img-wrap">
+            <img src="image/nexia.png" width="100%" id="nexiaImg">
+        </div>
+
+        <span id="line">
+            <img scr="image/arrow.png" class="arrow-removebg-preview">
+        </span>
+</div>
+<script>
+    var ImgBox = document.querySelector(".img-box");
+    var ImgWrap = document.querySelector(".img-wrap");
+    var nexiaImg = document.getElementById("nexiaImg");
+    var line = document.getElementById("line");
+    nexiaImg.style.width = ImgBox.offsetWidth + "px";
+
+    var leftSpace = ImgBox.offsetLeft;
+
+    ImgBox.onmousemove = function(e){
+       var boxWidth =  (e.pageX - leftSpace) + "px";
+       ImgWrap.style.width = boxWidth;
+       line.style.left = boxWidth;
+    }
+</script>
+</body>
+</html>
